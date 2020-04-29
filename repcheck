@@ -6,17 +6,17 @@ GITPATH=/home/xander/src:/home/xander/aurbuilds
 
 for BDIR in ${GITPATH//:/ }; do
     for SDIR in ${BDIR}/*/; do
-	echo -n  "$SDIR: "
+	echo "$SDIR: "
 	if [ -d ${SDIR}/.git ]; then
 	    git -C ${SDIR} remote update
-	    gstatus=$(git -C ${SDIR} status -uno --porcelain)
+	    gstatus=$(git -C ${SDIR} status -uno -b --porcelain)
 	else
 	    echo "not a git repository"
 	    continue
 	fi
 
 	if [[ $gstatus ]]; then
-	    echo -e '\n' $gstatus
+	    echo -e $gstatus '\n'
 	else
 	    echo "nothing to be done"
 	fi
