@@ -1,6 +1,8 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-# set up monitor
+# Connect external monitor to my laptop, called by udev
+#
+# `Borrowed' from bsilvereagle's blog
 
 DP_STATUS=$(</sys/class/drm/card0-DP-2/status )
 
