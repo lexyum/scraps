@@ -1,0 +1,33 @@
+#!/bin/bash
+# 4-bit colours
+echo "\033[<FG>;<BG>m - Foreground colour FG, background colour BG"
+for COLOUR in {30..37}
+do
+    let B_COLOUR=${COLOUR}+60
+    echo -e "\033[${COLOUR}m${COLOUR}\t\t\033[${B_COLOUR}m${B_COLOUR}"
+done
+# RGB
+echo -e "\033[39m"
+echo "\033[38:2:<r>:<g>:<b>m - Select RGB foreground colour"
+echo -e "\033[38:2:255:0:0m red \033[38:2:0:255:0m green \033[38:2:0:0:255m blue"
+echo -e "\033[39m"
+echo "\033[48:2:<r>:<g>:<b>m - Select RGB background colour"
+echo -e "\033[48:2:255:0:0m red \033[48:2:0:255:0m green \033[48:2:0:0:255m blue\033[49m"
+echo ""
+echo "\033[39m - Reset foreground colour"
+echo "\033[49m - Reset background colour"
+echo "\033[2K - Clear Line"
+echo "\033[<L>;<C>H OR \033[<L>;<C>f puts the cursor at line L and column C."
+echo "\033[<N>A Move the cursor up N lines"
+echo "\033[<N>B Move the cursor down N lines"
+echo "\033[<N>C Move the cursor forward N columns"
+echo "\033[<N>D Move the cursor backward N columns"
+echo "\033[2J Clear the screen, move to (0,0)"
+echo "\033[K Erase to end of line"
+echo "\033[s Save cursor position"
+echo "\033[u Restore cursor position"
+echo ""
+echo "\033[4m  Underline on"
+echo "\033[24m Underline off"
+echo "\033[1m  Bold on"
+echo "\033[21m Bold off"
