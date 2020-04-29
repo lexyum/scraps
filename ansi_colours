@@ -1,5 +1,5 @@
 #!/bin/bash
-# 4-bit colours
+# Reminder/reference for ANSI 4-bit colours
 echo "\033[<FG>;<BG>m - Foreground colour FG, background colour BG"
 for COLOUR in {30..37}
 do
